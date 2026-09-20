@@ -13,6 +13,26 @@ recorded in the private tracker.
 | mcp.so | — | Skipped: paid placement | 2026-09-06 |
 | PulseMCP | — | Skipped | 2026-09-06 |
 
+## Rename to Coordigent — 2026-09-20
+
+The product is Coordigent; the binaries are `coord` and `coord-mcp`; the domain is
+coordigent.com. This repository was renamed `ali8hsn/crews` -> `ali8hsn/coordigent`
+(GitHub 301s the old URL, verified) and its README, docs and posts were rewritten.
+
+Directory state after that rename:
+
+| Directory | What it shows now | Who can fix it |
+| --- | --- | --- |
+| Glama ([listing](https://glama.ai/mcp/servers/ali8hsn/crews)) | Old README: "Crews", "Tower is the installed binary", trycrews.com | **Unclaimed.** Claiming is free and is done by signing in with the GitHub account that owns the repository — no form. Claim it, then use Profile to fix the displayed name and Repository syncs to request a re-sync rather than waiting for the scheduled crawl. |
+| mcpservers.org ([listing](https://mcpservers.org/servers/trycrews-com-install)) | Old README, title still "Crews MCP Server" | The page has a **Request update** link. That is how the source was switched to this repository on 7 September, and the maintainer answered within the hour. The slug `trycrews-com-install` is the permalink and will not change. |
+| punkpeye/awesome-mcp-servers | **Fixed.** [PR #13844](https://github.com/punkpeye/awesome-mcp-servers/pull/13844) is retitled "Add Coordigent MCP coordination server" and its entry now links `ali8hsn/coordigent`. | Done, still awaiting maintainer review. |
+
+That PR mattered most: the list is synced to Glama, so merging it unchanged would
+have published the old name a second time rather than corrected the first.
+
+Search engines were not touched and do not need to be. They re-crawl; the earlier
+entries below are kept as the record of what was true when they were written.
+
 ## Details
 
 ### punkpeye/awesome-mcp-servers — open

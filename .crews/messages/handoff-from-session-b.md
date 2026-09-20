@@ -14,7 +14,7 @@ Both are already on `main`. They carry a `+0000` timezone, which is how to tell 
 from the `/loop` session's `-0500` commits.
 
 - `7397570` — Add CLI reference and three sourced comparisons; drop unsourceable competitor.
-  Adds `docs/cli.md` (both binaries, their flags, and the full `crews.*` tool surface,
+  Adds `docs/cli.md` (both binaries, their flags, and the full `coordigent.*` tool surface,
   verified against `packages/cli/src` and `packages/mcp/src`), plus
   `docs/compare/mcp-agent-mail.md`, `docs/compare/agent-orchestration.md` and
   `docs/compare/entire.md`, each sourced against pages fetched that morning. Also rewrote
@@ -48,7 +48,7 @@ it is the one file worth re-reading before it is trusted.
 
 Ali's correction, given at 05:10: production already exposes Streamable HTTP on `/mcp`. The
 Smithery blocker is the **bearer-token auth scheme** — they want OAuth or an MCPB bundle —
-not the transport. `.crews/messages/seo-loop.md` still says the opposite, and so does
+not the transport. `.coordigent/messages/seo-loop.md` still says the opposite, and so does
 `docs/seo/submission-results.md` (the paragraph beginning "The current server uses stdio
 transport").
 
@@ -57,12 +57,12 @@ and a write would have collided a second time.
 
 Evidence gathered before shutting down, both independent of the source tree claim:
 
-- `GET https://trycrews.com/mcp` returns **401**, not 404. The endpoint exists and it
+- `GET https://coordigent.com/mcp` returns **401**, not 404. The endpoint exists and it
   authenticates. Checked 7 September 2026, read-only.
 - `apps/server/src/app.ts:118` reads `app.all("/mcp", bearerAuth, createMcpHandler())` —
   bearer token, not OAuth.
 - Direct verification of the deployed endpoint beyond the status code was not possible from
-  that session: `trycrews.com` is not on the egress allowlist in either the container or the
+  that session: `coordigent.com` is not on the egress allowlist in either the container or the
   device VM, so `curl` got `blocked-by-allowlist`. The 401 above came through the page
   fetcher. Anyone re-checking this from a session with the domain allowlisted should read
   the `WWW-Authenticate` header directly and settle it properly.
@@ -72,7 +72,7 @@ Replacement text for the `### Smithery needs a transport we do not ship` section
 > ### Smithery needs an auth scheme we do not ship
 >
 > Not a transport problem. Production already serves Streamable HTTP at
-> `https://trycrews.com/mcp`; `apps/server/src/app.ts` routes it with
+> `https://coordigent.com/mcp`; `apps/server/src/app.ts` routes it with
 > `app.all("/mcp", bearerAuth, createMcpHandler())`, and an unauthenticated GET returns 401,
 > so the endpoint is live and authenticating.
 >
@@ -91,7 +91,7 @@ Replacement text for the `### Smithery needs a transport we do not ship` section
 And in `docs/seo/submission-results.md`, the sentence "The current server uses stdio
 transport. There is no verified Streamable HTTP endpoint (with OAuth if authentication is
 required) and no prebuilt MCPB bundle, so there is no honest value to paste" should become:
-"A Streamable HTTP endpoint exists at `https://trycrews.com/mcp` and returns 401 to an
+"A Streamable HTTP endpoint exists at `https://coordigent.com/mcp` and returns 401 to an
 unauthenticated request. It authenticates with a bearer token; Smithery requires OAuth or a
 prebuilt MCPB bundle, and neither exists yet."
 

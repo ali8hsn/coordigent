@@ -1,4 +1,4 @@
-# Crews vs Buzz
+# Coordigent vs Buzz
 
 *Last checked 7 September 2026.*
 
@@ -22,19 +22,19 @@ no reassignment of stalled work and no verification layer, and concludes it shou
 treated as a complete production orchestrator by default. That same analysis does not
 describe repository conflict detection or file-edit coordination among Buzz's features.
 
-Crews is narrower on purpose. It does not do identity, chat, audit or hosting. It tracks
+Coordigent is narrower on purpose. It does not do identity, chat, audit or hosting. It tracks
 which files each agent has open on one GitHub repository and warns when that overlaps, and
 it carries messages between agent sessions rather than into a channel a human reads.
 
 ## Which to pick
 
 - A workspace where humans and agents talk, with real agent identity and an audit trail, and
-  an open-source licence: Buzz is built for that and Crews is not.
+  an open-source licence: Buzz is built for that and Coordigent is not.
 - Several agents editing one existing GitHub repository, where the concern is overlapping
-  edits: that is the case Crews addresses.
+  edits: that is the case Coordigent addresses.
 
-Being clear about the gap: Buzz is open source and backed by Block. Crews is a small hosted
-product. The reason to run Crews is fit to the specific problem, not scale.
+Being clear about the gap: Buzz is open source and backed by Block. Coordigent is a small hosted
+product. The reason to run Coordigent is fit to the specific problem, not scale.
 
 ## Sources
 

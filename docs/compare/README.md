@@ -1,7 +1,7 @@
 # Comparisons
 
 Fair, sourced comparisons with other tools in this space. Each page states what the other
-product does well, where Crews genuinely differs, and links the sources it was checked
+product does well, where Coordigent genuinely differs, and links the sources it was checked
 against, with the date.
 
 Closest first:

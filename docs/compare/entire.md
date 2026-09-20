@@ -1,4 +1,4 @@
-# Crews vs Entire
+# Coordigent vs Entire
 
 *Last checked 7 September 2026 against [entire.io](https://entire.io) and
 [github.com/entireio/cli](https://github.com/entireio/cli).*
@@ -22,13 +22,13 @@ published on the pages checked, so nothing is claimed about it here.
 Both products accept that agents now write a large share of the code and that the record of
 *how* a change happened matters. Both attach themselves to the repository you already have
 rather than asking you to restructure work around a new object. Entire's session capture is
-more thorough than anything Crews does: Crews records which files a session is working in,
+more thorough than anything Coordigent does: Coordigent records which files a session is working in,
 not the prompts and tool calls that got it there.
 
 ## Where they differ
 
 The two work at different moments. Entire is a **record**: it indexes what happened after a
-session commits, and makes that history searchable. Crews is a **live channel**: it answers
+session commits, and makes that history searchable. Coordigent is a **live channel**: it answers
 what another agent has open right now, before you edit.
 
 Entire's own documentation is explicit about the limit here. It acknowledges concurrent
@@ -37,17 +37,17 @@ while another has uncommitted work, Entire warns you and tracks them separately"
 separate tracking is the stated behaviour. No file locking, cross-agent conflict resolution
 or agent-to-agent messaging is documented on the pages checked.
 
-Crews is also narrower on infrastructure by choice. It does not host or mirror your code;
+Coordigent is also narrower on infrastructure by choice. It does not host or mirror your code;
 your repository stays on GitHub with the permissions and history it already has.
 
 ## Which to pick
 
 - Slow clones at agent scale, regional hosting, or wanting to search why a line was written
-  six weeks ago: Entire is built for that, and Crews does none of it.
+  six weeks ago: Entire is built for that, and Coordigent does none of it.
 - Two or more agents editing one repository at the same time, where the risk is that both
-  open the same file: that is the case Crews is built for.
+  open the same file: that is the case Coordigent is built for.
 
-They compose cleanly. Entire records sessions; Crews coordinates them while they run.
+They compose cleanly. Entire records sessions; Coordigent coordinates them while they run.
 
 ## Sources
 

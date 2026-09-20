@@ -12,7 +12,7 @@ collision 2 is a lawyer's, not this file's.
 
 ## Collision 1 — CrewAI owns the search token
 
-**Query run:** `Crews MCP server coordinate AI coding agents trycrews`
+**Query run:** `Coordigent MCP server coordinate AI coding agents trycrews`
 
 **What came back, in order:**
 
@@ -38,7 +38,7 @@ whose product is adjacent enough that search engines have no reason to distingui
 
 ## Collision 2 — trycrew.com is a funded company one character away
 
-**Query run:** `"trycrews.com" OR "ali8hsn/crews"` — both exact strings, quoted.
+**Query run:** `"coordigent.com" OR "ali8hsn/coordigent"` — both exact strings, quoted.
 
 **What came back:**
 
@@ -53,7 +53,7 @@ whose product is adjacent enough that search engines have no reason to distingui
 9. [Bad Crew — Wikipedia](https://en.wikipedia.org/wiki/Bad_Crew)
 10. [Crew — Better than a Budget](https://www.trycrew.com/)
 
-**Neither `trycrews.com` nor `github.com/ali8hsn/crews` appears at all.** A search for the
+**Neither `coordigent.com` nor `github.com/ali8hsn/coordigent` appears at all.** A search for the
 literal domain returns a different company's domain.
 
 **What that company is.** [trycrew.com](https://www.trycrew.com/) — "Crew — Better than a
@@ -62,10 +62,10 @@ and a published seed round. Different category, real company, funded.
 
 **Two separate observations, which should not be blurred together.**
 
-The absence of `trycrews.com` and the repository from these results is *expected* this early.
+The absence of `coordigent.com` and the repository from these results is *expected* this early.
 Neither is indexed yet under its own name. That will change on its own and is not a finding.
 
-The domain proximity will not change. `trycrew.com` and `trycrews.com` differ by one character.
+The domain proximity will not change. `trycrew.com` and `coordigent.com` differ by one character.
 That means type-in traffic leaking to them, a support-confusion path in both directions, and a
 trademark question — whether a funded incumbent in an adjacent-enough field has a claim, and
 whether they would ever assert it. **That question is for a lawyer.** It is recorded here
@@ -95,10 +95,10 @@ worktrees."
 
 **Why it matters more than the other two.** CrewAI is adjacent; trycrew.com is a different
 category. This is the same problem, the same pitch, and the same word. A buyer comparing the two
-has to hold "crew" and "Crews" apart while reading, and search engines will not help them.
+has to hold "crew" and "Coordigent" apart while reading, and search engines will not help them.
 
 Note also that it is not new — the repository is from late June and the HN post is simply its
-launch — so this is not a case of someone arriving after Crews.
+launch — so this is not a case of someone arriving after Coordigent.
 
 Full technical comparison, written to be fair: [docs/compare/crew-0xmmo.md](../compare/crew-0xmmo.md).
 The short version is that crew does context sharing and messaging with no file-level claims,
@@ -113,7 +113,7 @@ for queries.
 
 Worth stating, so the case is not overstated:
 
-- Crews being absent from the three baseline queries is not caused by any of this. It is
+- Coordigent being absent from the three baseline queries is not caused by any of this. It is
   absent because it is new and unlisted. See [citations/2026-09-07.md](citations/2026-09-07.md).
 - No user confusion has been observed, because there are not yet enough users to observe.
 - Nothing here says the name is wrong. Collisions 1 and 3 are survivable with a distinctive
@@ -123,8 +123,8 @@ Worth stating, so the case is not overstated:
 
 Recorded now because the number only grows: an [mcpservers.org listing](https://mcpservers.org/servers/trycrews-com-install)
 carrying the slug, an open [PR #13844](https://github.com/punkpeye/awesome-mcp-servers/pull/13844)
-on a 94,537-star list, this documentation repository and its URL, the `crews.*` MCP tool names
-that appear in every client config, the `crews` binary name, and eight drafted blog posts. All
+on a 94,537-star list, this documentation repository and its URL, the `coordigent.*` MCP tool names
+that appear in every client config, the `coordigent` binary name, and eight drafted blog posts. All
 of it is small today. None of it is smaller next month.
 
 ## Re-check

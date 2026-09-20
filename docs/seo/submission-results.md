@@ -1,6 +1,6 @@
 # Directory submissions
 
-Status of every directory, awesome-list and registry Crews has been submitted to. Newest
+Status of every directory, awesome-list and registry Coordigent has been submitted to. Newest
 activity first. Contact email is withheld here because this repository is public; it is
 recorded in the private tracker.
 
@@ -17,7 +17,7 @@ recorded in the private tracker.
 
 ### punkpeye/awesome-mcp-servers — open
 
-PR #13844, opened 2026-09-07 by `ali8hsn`, titled "Add Crews MCP coordination server 🤖🤖🤖".
+PR #13844, opened 2026-09-07 by `ali8hsn`, titled "Add Coordigent MCP coordination server 🤖🤖🤖".
 This became possible only once this documentation repository was made public;
 [their CONTRIBUTING](https://github.com/punkpeye/awesome-mcp-servers/blob/main/CONTRIBUTING.md)
 requires a repository link, and previously there was no public repository to give.
@@ -29,7 +29,7 @@ automated agents append `🤖🤖🤖` to the PR title to opt into a fast-tracke
 The title is right as filed.
 
 **One fix was pushed to the branch** ([a73d749](https://github.com/punkpeye/awesome-mcp-servers/pull/13844/commits)).
-The entry read "...; hosted at trycrews.com with a free solo tier." That list is
+The entry read "...; hosted at coordigent.com with a free solo tier." That list is
 [synced to the Glama directory](https://glama.ai/mcp/servers), and "hosted at" is one of the
 phrasings Glama's spam filter reacts to. It now reads ". Free solo tier; team pricing in
 preview."
@@ -66,7 +66,7 @@ unknown, so no claim is made about them.
 
 Sign-in is required, but the real blocker is downstream: the server URL field must be a
 working public HTTPS MCP endpoint, not a marketing site. A Streamable HTTP endpoint does
-exist at `https://trycrews.com/mcp` and returns 401 to an unauthenticated request, so the
+exist at `https://coordigent.com/mcp` and returns 401 to an unauthenticated request, so the
 transport was never the problem. It authenticates with a **bearer token**, and Smithery
 requires OAuth for authenticated remote servers. The MCPB bundle is therefore the way in
 rather than the URL; a bundle has been built on branch `registry/docker-and-mcpb` but not

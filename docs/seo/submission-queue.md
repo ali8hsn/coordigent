@@ -52,7 +52,7 @@ Full detail on both, including the entry text and the open questions, is in
 
 | Directory | Blocker |
 | --- | --- |
-| Glama | Account needed, and `ghcr.io/ali8hsn/crews:latest` is not published. Submitting before the image is public gives a listing whose build fails. **Now also gates PR #13844** — see below. |
+| Glama | Account needed, and `ghcr.io/ali8hsn/coordigent:latest` is not published. Submitting before the image is public gives a listing whose build fails. **Now also gates PR #13844** — see below. |
 | Smithery | MCPB bundle built and verified but not uploaded; the remote route needs OAuth and production is bearer-token. |
 | jaw9c/awesome-remote-mcp-servers | Their contributing rules accept OAuth 2.0 only. Production `/mcp` is bearer-token, so ineligible until OAuth ships — same trigger as Smithery. |
 | docker/mcp-registry | Local route needs a Dockerfile in a *public* source repository; ours is private. Remote route asks for OAuth details. Worth asking a maintainer, not worth filing blind. |
@@ -101,7 +101,7 @@ CONTRIBUTING quotes and rejection reasons are in
 - Scope fits because: it is the canonical registry MCP clients read, "like an app store for MCP servers", and accepts remote servers via a `remotes` entry.
 - Paid? no
 - Entry text: the `server.json` in [submission-research.md](submission-research.md) — streamable-http at `/mcp` with a secret `Authorization` header. Needs no npm package, no Dockerfile and no OAuth, so unlike Smithery it is **not blocked**.
-- Open question before `ready`: confirm the header name against the deployed endpoint. This session could not reach `trycrews.com` (`blocked-by-allowlist`) and saw only a 401 status, no headers.
+- Open question before `ready`: confirm the header name against the deployed endpoint. This session could not reach `coordigent.com` (`blocked-by-allowlist`) and saw only a 401 status, no headers.
 - Filed: —
 
 ### TensorBlock/awesome-mcp-servers

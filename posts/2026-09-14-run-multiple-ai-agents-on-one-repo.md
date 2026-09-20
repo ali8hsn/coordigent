@@ -12,7 +12,7 @@ Two engineers can give their agents sensible tasks and still end up with changes
 
 Running multiple AI agents on one codebase is therefore not just a scheduling problem. It is a coordination problem. You need a way to make intended work visible, resolve overlapping ownership, and communicate decisions before another session builds on an outdated assumption.
 
-I’m building Crews around that problem. This article describes a workflow you can evaluate, including what it does not solve. It is not a report of measured productivity gains or a promise that parallel development can become conflict-free.
+I’m building Coordigent around that problem. This article describes a workflow you can evaluate, including what it does not solve. It is not a report of measured productivity gains or a promise that parallel development can become conflict-free.
 
 ## A shared repository is not a shared plan
 
@@ -32,7 +32,7 @@ Do not maximize the number of active agents as an end in itself. Parallel work i
 
 ## Make editing intent visible
 
-Crews is an MCP server that exposes shared file state, claims, conflict warnings, and messages between participating agents. Tower is the binary you install. The product’s immediate job is to let a session discover work that would otherwise be invisible outside another agent’s conversation.
+Coordigent is an MCP server that exposes shared file state, claims, conflict warnings, and messages between participating agents. `coord` is the binary you install. The product’s immediate job is to let a session discover work that would otherwise be invisible outside another agent’s conversation.
 
 Before editing a path, an agent checks whether another session has claimed it. A claim describes intended work. When claims overlap, the conflict response gives the agents a reason to stop and coordinate, choose another path, or sequence the changes.
 
@@ -48,9 +48,9 @@ Release ownership deliberately when the change is ready for handoff. If the desi
 
 ## Connect the first two sessions
 
-Start with the [Crews install guide](https://trycrews.com/install). The intended self-serve flow supplies a personalized install command after sign-in, with the user’s token already included. At the time of writing, the live access screen reports that self-serve signup is disabled. Do not treat the proposed install journey as available until that has been resolved.
+Start with the [Coordigent install guide](https://coordigent.com/install). The intended self-serve flow supplies a personalized install command after sign-in, with the user’s token already included. At the time of writing, the live access screen reports that self-serve signup is disabled. Do not treat the proposed install journey as available until that has been resolved.
 
-For an account with working access, install Tower on each development machine. Use a repository registered with the appropriate crew. Run `tower connect` inside that checkout, then run `tower doctor`. Inspect the generated MCP configuration and any client hooks before starting the test.
+For an account with working access, install Coordigent on each development machine. Use a repository registered with the appropriate crew. Run `coord connect` inside that checkout, then run `coord doctor`. Inspect the generated MCP configuration and any client hooks before starting the test.
 
 The current registrar writes JSON MCP entries for Claude Code and Cursor, and a TOML entry for Codex. Keep credentials personal. Copying one engineer’s token to another machine is not a team onboarding process. Restart the clients and confirm that both sessions identify the same registered repository.
 
@@ -64,11 +64,11 @@ Repeat the check after restarting one client. This can expose assumptions about 
 
 ## Keep the coordination state current
 
-Claims describe live work, so session freshness matters. Crews uses heartbeats to maintain active coordination state. A session that stops participating should not be treated as a permanent owner of a file. Conversely, an empty view does not prove that no person or unconnected tool is making changes.
+Claims describe live work, so session freshness matters. Coordigent uses heartbeats to maintain active coordination state. A session that stops participating should not be treated as a permanent owner of a file. Conversely, an empty view does not prove that no person or unconnected tool is making changes.
 
 Build registration, checks, claims, messages, and release into the agent’s working instructions. Then observe whether the client follows them. MCP tool availability and reliable tool use are separate things. If the workflow depends on a person remembering to relay every event, you have recreated the original coordination burden in another place.
 
-Keep the first evaluation focused. The marketplace can help agents discover additional tools and capabilities, but adding more tools will not repair unclear ownership. Establish the shared-repo workflow before expanding the number of agents or the scope of their tasks.
+Keep the first evaluation focused. The directory can help agents discover additional tools and capabilities, but adding more tools will not repair unclear ownership. Establish the shared-repo workflow before expanding the number of agents or the scope of their tasks.
 
 ## Review the combined behavior
 
@@ -82,6 +82,6 @@ If the experiment fails, keep the failure concrete. A missing claim, stale sessi
 
 The useful goal is not to keep every agent busy. It is to let agents make progress without forcing engineers to reconstruct each other’s intentions afterward. Start with two sessions, a small dependency, and a visible handoff. Expand only when that interaction is understandable and repeatable.
 
-Crews is intended to add that coordination to the coding clients and repositories a team already uses. The free solo tier is the starting point for evaluation once access is available. Team pricing is currently a $20-per-seat monthly preview, and paid billing is not yet available.
+Coordigent is intended to add that coordination to the coding clients and repositories a team already uses. The free solo tier is the starting point for evaluation once access is available. Team pricing is currently a $20-per-seat monthly preview, and paid billing is not yet available.
 
-Visit the [install guide](https://trycrews.com/install#get-command) for the current access and setup flow. Keep the first test small enough to show exactly what a claim, a warning, and a message changed about the work.
+Visit the [install guide](https://coordigent.com/install#get-command) for the current access and setup flow. Keep the first test small enough to show exactly what a claim, a warning, and a message changed about the work.

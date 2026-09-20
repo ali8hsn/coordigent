@@ -9,7 +9,7 @@ Swept 7 September 2026, last 7 days.
 
 ## 1. mcpservers.org — replied "Updated" ✅ no reply needed
 
-**Thread:** "Re: Update source for listing trycrews-com-install (Crews)"
+**Thread:** "Re: Update source for listing trycrews-com-install (Coordigent)"
 **From:** contact@mcpservers.org · 7 Sep 2026, 08:57 UTC
 **Body, in full:** "Updated"
 
@@ -25,7 +25,7 @@ on 7 September 2026, because automated fetches of that host return 403.
 **Recommendation: no reply.** A one-word "Updated" from a maintainer who acted within
 37 minutes does not need a thank-you email. If you want to send one anyway:
 
-> Subject: Re: Update source for listing trycrews-com-install (Crews)
+> Subject: Re: Update source for listing trycrews-com-install (Coordigent)
 >
 > Confirmed on our end — the docs are rendering. Thanks for the quick turnaround.
 

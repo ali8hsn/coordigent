@@ -21,9 +21,9 @@ That last point is the reason this file has five drafts rather than fifteen. **T
 under someone's launch to mention a competing product is spam**, and on Hacker News it
 reliably backfires on the person doing it. Those threads are listed below under "do not
 reply", with what to take from them instead. The drafts are only for threads where somebody
-asked a question that Crews' authors can actually answer.
+asked a question that Coordigent' authors can actually answer.
 
-Each draft answers the question first and discloses the affiliation. Two mention Crews; three
+Each draft answers the question first and discloses the affiliation. Two mention Coordigent; three
 do not, because a mention would not have helped the person asking.
 
 ---
@@ -34,7 +34,7 @@ do not, because a mention would not have helped the person asking.
 - **Posted:** 30 August 2026 · **age 8 days** · 5 points, 4 comments
 - **Why:** The OP is stuck on getting agents to stop at chosen points. A commenter
   (`hydropax`) separately describes picking tasks "unlikely to have merge conflicts" — hand
-  scheduling around the exact failure Crews addresses.
+  scheduling around the exact failure Coordigent addresses.
 - **Draft (112 words):**
 
 > On stopping: what worked for me was making the stop condition a *tool call* rather than a
@@ -77,7 +77,7 @@ do not, because a mention would not have helped the person asking.
 - **URL:** https://news.ycombinator.com/item?id=49589914
 - **Posted:** 6 September 2026 · **age 1 day**
 - **Why:** Adjacent, not central. A useful place to be helpful with no product mention at all.
-- **Draft (74 words), no Crews mention:**
+- **Draft (74 words), no Coordigent mention:**
 
 > The thing that made these manageable for us was treating them as code rather than config:
 > one file per capability, checked in, reviewed in the same PR as whatever motivated the
@@ -93,7 +93,7 @@ do not, because a mention would not have helped the person asking.
 - **Posted:** 31 August 2026 · **age 7 days**
 - **Why:** Directly about whether multi-agent development actually works at scale. A place to
   be specific and honest, including about limits.
-- **Draft (96 words), no Crews mention:**
+- **Draft (96 words), no Coordigent mention:**
 
 > The factory metaphor breaks on a detail that sounds small: stations on a real assembly line
 > do not both reach for the same part. Agents do, constantly, because the codebase is one
@@ -112,7 +112,7 @@ do not, because a mention would not have helped the person asking.
 - **Posted:** 2 September 2026 · **age 5 days**
 - **Why:** Large refactors are the case where parallel agents cannot be isolated by worktree,
   because the change is cross-cutting by definition. Good thread to make that argument in.
-- **Draft (91 words), no Crews mention:**
+- **Draft (91 words), no Coordigent mention:**
 
 > Part of why the big refactor never happens with agents is that it is the one job worktree
 > isolation cannot help with. Splitting a rename across forty files into four parallel agents
@@ -127,7 +127,7 @@ do not, because a mention would not have helped the person asking.
 ## Do not reply — but read
 
 Verified, on-topic, within fourteen days, and listed so nobody wastes time rediscovering them.
-A Crews mention in any of these would be a product plug on someone else's launch.
+A Coordigent mention in any of these would be a product plug on someone else's launch.
 
 | Thread | Posted | Age | Why not |
 | --- | --- | --- | --- |

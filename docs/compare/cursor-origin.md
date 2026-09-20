@@ -1,4 +1,4 @@
-# Crews vs Cursor Origin
+# Coordigent vs Cursor Origin
 
 *Last checked 7 September 2026. Origin was not generally available at the time of writing.*
 
@@ -25,17 +25,17 @@ Origin replaces **where your code lives**. It is a GitHub alternative, and adopt
 migrating hosting. Its coordination happens at the *merge* boundary: stacked PRs, merge
 queues, agents resolving conflicts after the fact, at very high throughput.
 
-Crews leaves your code on GitHub and coordinates *before* the edit: which files each agent
+Coordigent leaves your code on GitHub and coordinates *before* the edit: which files each agent
 currently has open, and a warning when one agent is about to work where another already is.
-Crews does not host repositories, run merge queues, or resolve conflicts.
+Coordigent does not host repositories, run merge queues, or resolve conflicts.
 
 ## The honest assessment
 
 If Origin ships as described, teams already committed to Cursor's stack and willing to move
 off GitHub get an integrated editor, cloud agents, review and hosting from one vendor. That
-is a genuine advantage Crews does not offer and does not try to.
+is a genuine advantage Coordigent does not offer and does not try to.
 
-What Crews offers against it is that it works today, on the repository you already have, with
+What Coordigent offers against it is that it works today, on the repository you already have, with
 whatever mix of clients your team actually uses — Cursor included, alongside Claude Code,
 Codex, VS Code, Kiro, Windsurf and Perplexity.
 

@@ -43,7 +43,7 @@ https://glama.ai/mcp/connectors."
 
 So the order is **Glama first, then the badge, then the PR merges** — and the Dockerfile that
 Glama needs is exactly the artifact reported on branch `registry/docker-and-mcpb`
-(PR [#1](https://github.com/ali8hsn/crews/pull/1)). The pieces exist; they have not been
+(PR [#1](https://github.com/ali8hsn/coordigent/pull/1)). The pieces exist; they have not been
 connected.
 
 Glama itself needs a person: submission sits behind an account, and creating accounts was
@@ -74,21 +74,21 @@ GitHub authentication requires the server name to begin with `io.github.ali8hsn/
 ```json
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.ali8hsn/crews",
+  "name": "io.github.ali8hsn/coordigent",
   "description": "MCP server for shared file state, overlap warnings, and messaging between AI coding agents working in parallel on one GitHub repo.",
   "repository": {
-    "url": "https://github.com/ali8hsn/crews",
+    "url": "https://github.com/ali8hsn/coordigent",
     "source": "github"
   },
   "version": "0.1.0",
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://trycrews.com/mcp",
+      "url": "https://coordigent.com/mcp",
       "headers": [
         {
           "name": "Authorization",
-          "description": "Bearer token from your Crews account. Get one at https://trycrews.com/install",
+          "description": "Bearer token from your Coordigent account. Get one at https://coordigent.com/install",
           "isRequired": true,
           "isSecret": true
         }
@@ -102,18 +102,18 @@ GitHub authentication requires the server name to begin with `io.github.ali8hsn/
 `mcp-publisher login` with GitHub, `mcp-publisher publish`.
 
 **Confirm before publishing:** that `Authorization` is the correct header name and that a
-bearer token is accepted in it — this session could not reach `trycrews.com` from either
+bearer token is accepted in it — this session could not reach `coordigent.com` from either
 environment (`blocked-by-allowlist`), and the 401 observed came through a page fetcher that
 does not expose response headers. Also set `version` to the real one; `0.1.0` is a placeholder.
 
-An MCPB package entry can be added later alongside `remotes` once `dist/crews.mcpb` is
+An MCPB package entry can be added later alongside `remotes` once `dist/coordigent.mcpb` is
 published somewhere fetchable.
 
 ### 2. Glama — account required, unblocks everything above it
 
 - **URL:** https://glama.ai/mcp/servers ("Add Server")
 - **Status:** Blocked on account creation. Needs a human.
-- **What to supply:** repository `https://github.com/ali8hsn/crews`; the standard description;
+- **What to supply:** repository `https://github.com/ali8hsn/coordigent`; the standard description;
   the Dockerfile from `registry/docker-and-mcpb`. Checks only require the server to start and
   answer introspection.
 - **Then:** grab the resulting Glama path and add the badge to PR #13844 (next entry).
@@ -126,7 +126,7 @@ published somewhere fetchable.
 - **Current entry on the branch:**
 
 ```
-- [ali8hsn/crews](https://github.com/ali8hsn/crews) 🎖️ ☁️ 🏠 🍎 🐧 - MCP server for shared file state, overlap warnings, and messaging between coding agents working in parallel on one GitHub repo. Works with Claude Code, Cursor, Codex, VS Code, Kiro, Windsurf and Perplexity. Free solo tier; team pricing in preview.
+- [ali8hsn/coordigent](https://github.com/ali8hsn/coordigent) 🎖️ ☁️ 🏠 🍎 🐧 - MCP server for shared file state, overlap warnings, and messaging between coding agents working in parallel on one GitHub repo. Works with Claude Code, Cursor, Codex, VS Code, Kiro, Windsurf and Perplexity. Free solo tier; team pricing in preview.
 ```
 
 **Two corrections to make in the same push as the badge:**
@@ -143,7 +143,7 @@ published somewhere fetchable.
 with the real Glama path:
 
 ```
-- [ali8hsn/crews](https://github.com/ali8hsn/crews) [![ali8hsn/crews MCP server](https://glama.ai/mcp/servers/OWNER/REPO/badges/score.svg)](https://glama.ai/mcp/servers/OWNER/REPO) 📇 🎖️ ☁️ 🏠 🍎 🐧 - MCP server for shared file state, overlap warnings, and messaging between coding agents working in parallel on one GitHub repo. Works with Claude Code, Cursor, Codex, VS Code, Kiro, Windsurf and Perplexity. Free solo tier; team pricing in preview.
+- [ali8hsn/coordigent](https://github.com/ali8hsn/coordigent) [![ali8hsn/coordigent MCP server](https://glama.ai/mcp/servers/OWNER/REPO/badges/score.svg)](https://glama.ai/mcp/servers/OWNER/REPO) 📇 🎖️ ☁️ 🏠 🍎 🐧 - MCP server for shared file state, overlap warnings, and messaging between coding agents working in parallel on one GitHub repo. Works with Claude Code, Cursor, Codex, VS Code, Kiro, Windsurf and Perplexity. Free solo tier; team pricing in preview.
 ```
 
 Keep `🤖🤖🤖` in the PR title. Their CONTRIBUTING states it opts agent PRs into a fast-track
@@ -167,18 +167,18 @@ in the right category, alphabetical order preserved, and a PR.
 the insertion point first, since none of the three documents one):
 
 ```
-- [Crews](https://github.com/ali8hsn/crews) - MCP server for shared file state, overlap warnings, and messaging between AI coding agents working in parallel on one GitHub repo. Works with Claude Code, Cursor, Codex, VS Code, Kiro, Windsurf and Perplexity.
+- [Coordigent](https://github.com/ali8hsn/coordigent) - MCP server for shared file state, overlap warnings, and messaging between AI coding agents working in parallel on one GitHub repo. Works with Claude Code, Cursor, Codex, VS Code, Kiro, Windsurf and Perplexity.
 ```
 
-**PR title:** `Add Crews — coordination MCP server for parallel coding agents`
+**PR title:** `Add Coordigent — coordination MCP server for parallel coding agents`
 
 **PR body:**
 
-> Adds Crews, an MCP server that lets AI coding agents working in parallel on one GitHub
+> Adds Coordigent, an MCP server that lets AI coding agents working in parallel on one GitHub
 > repository see each other's file claims, receive a warning when their work overlaps, and
 > message one another.
 >
-> Repository: https://github.com/ali8hsn/crews — public documentation, install guides for
+> Repository: https://github.com/ali8hsn/coordigent — public documentation, install guides for
 > seven clients, and the full tool surface.
 >
 > Entry placed in <category>, alphabetical order preserved. Happy to adjust the wording or
@@ -203,7 +203,7 @@ Recorded so nobody spends the evening rediscovering them.
 | [LobeHub](https://lobehub.com/mcp) | **No self-serve route found.** The page only invites you to "let us know" and they will add it. No form, no public submission repository located. |
 | [PulseMCP](https://www.pulsemcp.com/submit) | **Unknown.** The submit page could not be fetched — `robots.txt` disallows it. Needs a human with a browser. |
 | mcp.so | **Skip.** Paid placement. |
-| [Smithery](https://smithery.ai/new) | **Blocked on auth scheme.** Requires OAuth for authenticated remote servers, or an MCPB bundle. See [seo-loop.md](../../.crews/messages/seo-loop.md). |
+| [Smithery](https://smithery.ai/new) | **Blocked on auth scheme.** Requires OAuth for authenticated remote servers, or an MCPB bundle. See [seo-loop.md](../../.coordigent/messages/seo-loop.md). |
 | [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) (90,128 stars) | **Not assessed.** The community-server section's inclusion policy was not read in this session. High value if it accepts third-party entries — check before writing a PR. |
 | [e2b-dev/awesome-ai-agents](https://github.com/e2b-dev/awesome-ai-agents) (29,921 stars) | **Not assessed.** Broader AI-agents list, not MCP-specific. Fit is plausible but unverified. |
 

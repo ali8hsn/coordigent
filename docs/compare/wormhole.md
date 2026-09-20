@@ -1,4 +1,4 @@
-# Crews vs Wormhole
+# Coordigent vs Wormhole
 
 *Last checked 7 September 2026 against [github.com/fatmali/wormhole](https://github.com/fatmali/wormhole).*
 
@@ -17,7 +17,7 @@ locally with `npx wormhole-mcp`.
 
 ## The honest overlap
 
-This is the closest comparison of the four. Wormhole and Crews both ship an MCP server, both
+This is the closest comparison of the four. Wormhole and Coordigent both ship an MCP server, both
 track what agents are doing at file level, and both warn about agents touching the same
 files. If you want that shape of tool, free and inspectable, Wormhole does it today.
 
@@ -25,12 +25,12 @@ files. If you want that shape of tool, free and inspectable, Wormhole does it to
 
 Wormhole is a local tool keyed on `project_path`, and its stated purpose is continuity for
 *you* across your own tools and subagents — "when you switch tools mid-task, nothing gets
-lost." Crews is built for a team of people on one GitHub repository, with per-user tokens
+lost." Coordigent is built for a team of people on one GitHub repository, with per-user tokens
 and state held by a service so agents on different machines share one view. Wormhole's
-conflict check is a tool an agent calls; Crews also pushes warnings back as banners on
+conflict check is a tool an agent calls; Coordigent also pushes warnings back as banners on
 whatever tool result comes next.
 
-Wormhole is open and unlicensed-as-yet; Crews is a hosted service with a free solo tier and
+Wormhole is open and unlicensed-as-yet; Coordigent is a hosted service with a free solo tier and
 $20 per seat per month team pricing in preview.
 
 ## Which to pick
@@ -38,7 +38,7 @@ $20 per seat per month team pricing in preview.
 - Solo developer keeping one project coherent across Claude Code, Copilot and Cursor, who
   wants something free and local: Wormhole is a good fit and honest about its maturity.
 - A team of people whose agents share one repository across several machines: that is the
-  case Crews is built for.
+  case Coordigent is built for.
 
 ## Sources
 

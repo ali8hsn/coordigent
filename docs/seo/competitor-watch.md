@@ -5,7 +5,7 @@ search, on 7 September 2026. Everything here was fetched; nothing is recalled.
 
 ## The headline: the category is filling in fast
 
-**Two products describing themselves almost exactly as Crews does launched on Hacker News in
+**Two products describing themselves almost exactly as Coordigent does launched on Hacker News in
 the last ten days.** Neither existed in the competitor research of 6 September.
 
 ### crew — `github.com/0xmmo/crew`
@@ -20,7 +20,7 @@ gives agents an interface to message each other, landing messages in another age
 even mid-work." His listed use cases open with "shipping on a single checkout without
 worktrees", then cross-agent code review and supervisor/executor pairings across models.
 
-Two things matter here. The **name** is Crews minus one letter, which compounds a naming
+Two things matter here. The **name** is Coordigent minus one letter, which compounds a naming
 problem that already includes CrewAI and trycrew.com — the evidence for all three is collected
 in [name-collisions.md](name-collisions.md), and a fair technical comparison is in
 [docs/compare/crew-0xmmo.md](../compare/crew-0xmmo.md). Note that crew is not new: its
@@ -39,7 +39,7 @@ points. Described as "an open sourced coordination layer for AI agents working o
 repository. Detects work duplication and design conflicts early."
 
 That is the closest positional match found so far — same layer, same object, same failure
-mode, and it adds *work duplication* detection, which Crews does not do. Note also the second
+mode, and it adds *work duplication* detection, which Coordigent does not do. Note also the second
 comment, from `nishant6200`: "Interested in using it within our organisation. Shot you an
 email!" Someone is already trying to buy the adjacent thing.
 
@@ -64,7 +64,7 @@ fourteen days on HN:
 
 - [Clash](https://github.com/clash-sh/clash) — read-only merge simulation across worktrees,
   pre-edit `clash check`, Claude plugin hook on Write/Edit/MultiEdit. The nearest thing to
-  Crews' warnings, built on git rather than a server.
+  Coordigent' warnings, built on git rather than a server.
 - [Grove](https://github.com/NathanDrake2406/grove) — detects worktree conflicts at write time.
 - [LaneGate](https://news.ycombinator.com/item?id=49487178) — git-native worktree orchestrator.
 - [Redshift Hub](https://news.ycombinator.com/item?id=49520913) — agents in parallel across worktrees.
@@ -84,13 +84,13 @@ Three things follow, and none of them is "write more documentation".
 
 **The worktree answer is winning by default.** Nine of the items above are worktree tooling,
 posted in two weeks. Every "how do I run agents in parallel" thread on HN answers itself with
-worktrees. Crews' argument has to be against *that*, not against other MCP servers — and the
+worktrees. Coordigent' argument has to be against *that*, not against other MCP servers — and the
 honest version of the argument is narrow: worktrees isolate, which is correct until agents
 must touch the same files, and then isolation converts a live conflict into a merge conflict
 you meet later.
 
-**Crews is not the only one saying "coordination layer" any more.** Twing said it on
-28 August with nine points, crew said it this morning. Whatever differentiates Crews needs to
+**Coordigent is not the only one saying "coordination layer" any more.** Twing said it on
+28 August with nine points, crew said it this morning. Whatever differentiates Coordigent needs to
 be sharper than the category name, because the category name is now contested.
 
 **The strongest objection is prior to all of this.** `apnabhidu47`'s comment — most people run

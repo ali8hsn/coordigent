@@ -1,4 +1,4 @@
-# Crews vs crew (0xmmo/crew)
+# Coordigent vs crew (0xmmo/crew)
 
 *Last checked 7 September 2026 against [github.com/0xmmo/crew](https://github.com/0xmmo/crew)
 and its [Show HN thread](https://news.ycombinator.com/item?id=49595212).*
@@ -41,14 +41,14 @@ need worktrees."
 Three things, stated plainly.
 
 **Installation is genuinely one command.** `npm i -g @0xmmo/crew` wires three different clients
-with no config file to edit and no account to create. Crews installs a binary and signs the
+with no config file to edit and no account to create. Coordigent installs a binary and signs the
 machine in with a token; crew does not ask for either.
 
 **Mid-turn delivery, and `--kickstart`.** Landing a message in a session that is *already
 working*, and optionally forcing it to continue rather than go idle, is a real capability and
-Crews has no equivalent. Crews' messages wait in `crews.message.inbox` for the agent to read.
+Coordigent has no equivalent. Coordigent' messages wait in `coordigent.message.inbox` for the agent to read.
 
-**It supports opencode.** Crews does not.
+**It supports opencode.** Coordigent does not.
 
 It is also MIT and inspectable, with no hosted dependency, which matters if repository metadata
 must not leave the machine.
@@ -67,8 +67,8 @@ That is a coherent design. The bet is that agents given good enough awareness of
 route around one another the way its README's autonomous cars do. It may well be right often
 enough to be useful.
 
-Crews takes the other bet: that awareness is not enough, and the moment before an edit needs an
-explicit, checkable answer. `crews.claim.check` reads who holds a path, `crews.claim.add`
+Coordigent takes the other bet: that awareness is not enough, and the moment before an edit needs an
+explicit, checkable answer. `coordigent.claim.check` reads who holds a path, `coordigent.claim.add`
 returns conflicts and a hard conflict denies the claim outright, and overlap warnings arrive as
 banners on whatever tool the agent just called. Whether that is worth the extra machinery
 depends on how much you trust context injection to change behaviour.
@@ -78,14 +78,14 @@ depends on how much you trust context injection to change behaviour.
 crew's registry lives in `~/.crew/sessions/`, and the context it injects says "other agent
 session(s) running on this machine right now". It coordinates the agents on one computer.
 
-Crews holds coordination state for a team, so an agent on your laptop and an agent on a
+Coordigent holds coordination state for a team, so an agent on your laptop and an agent on a
 colleague's can see each other in the same repository. If everything you run is on one machine,
 that difference costs you nothing and crew is the lighter tool. If the second agent belongs to
 a teammate, crew has nothing to say about it.
 
 ## Client coverage
 
-| | crew | Crews |
+| | crew | Coordigent |
 | --- | --- | --- |
 | Claude Code | yes | yes |
 | Codex | yes | yes |
@@ -96,7 +96,7 @@ a teammate, crew has nothing to say about it.
 | Windsurf | no | yes |
 | Perplexity | no | yes |
 
-crew integrates through hooks, which is why its list is short and deep; Crews integrates through
+crew integrates through hooks, which is why its list is short and deep; Coordigent integrates through
 MCP, which is why its list is long and shallower.
 
 ## Which to pick
@@ -104,14 +104,14 @@ MCP, which is why its list is long and shallower.
 - **One machine, Claude Code / Codex / opencode, and you want it working in a minute for free:**
   crew. It is the better tool for that case and it is not close.
 - **You want an agent stopped before it edits a file another agent is in, rather than told about
-  it:** that is Crews, and crew does not attempt it.
-- **The agents belong to different people:** Crews. crew is scoped to one machine.
+  it:** that is Coordigent, and crew does not attempt it.
+- **The agents belong to different people:** Coordigent. crew is scoped to one machine.
 
 They are not really substitutes, despite the names. Someone could run both.
 
 ## On the name
 
-crew and Crews arrived at nearly the same name independently — crew's repository predates this
+crew and Coordigent arrived at nearly the same name independently — crew's repository predates this
 documentation by some months. Neither party is doing anything wrong, and this page is not a
 claim on the word. It is here so that anyone who finds one while looking for the other can tell
 them apart quickly. Corrections welcome as an issue.

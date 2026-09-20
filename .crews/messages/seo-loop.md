@@ -10,22 +10,22 @@ listings were gated on the same missing thing and should be tracked together. Th
 it asked for now exist, and with them in place the two blockers are no longer the same
 blocker. Splitting them back apart is the correction.
 
-Source for this: PR [#1 on the docs repo](https://github.com/ali8hsn/crews/pull/1) (branch
+Source for this: PR [#1 on the docs repo](https://github.com/ali8hsn/coordigent/pull/1) (branch
 `registry/docker-and-mcpb`, commit `4f9776d`), open and unmerged at the time of writing.
 That work reports:
 
 - A root **`Dockerfile`** in the source repository. Built and run locally: the container
-  answers `initialize`, lists 26 tools over stdio, and reaches `https://trycrews.com` — a
+  answers `initialize`, lists 26 tools over stdio, and reaches `https://coordigent.com` — a
   deliberately wrong key returns `Unauthorized`, which is the hosted endpoint replying.
-- **`dist/crews.mcpb`**, built by `bun run build:mcpb`, verified under Node 22: same
+- **`dist/coordigent.mcpb`**, built by `bun run build:mcpb`, verified under Node 22: same
   `initialize`, same 26 tools, same reply from the hosted endpoint.
 
-Both run Tower in remote-client mode, take `CREWS_API_KEY` as their only required variable,
+Both run `coord` in remote-client mode, take `CREWS_API_KEY` as their only required variable,
 and use no database.
 
-**One thing in the superseded note was simply wrong.** It said "`tower-mcp` is stdio, there
+**One thing in the superseded note was simply wrong.** It said "`coord-mcp` is stdio, there
 is no honest value to paste in that field." A production `/mcp` endpoint exists; it
-authenticates with a Tower bearer token. The problem was never that we lack a remote
+authenticates with a Coordigent bearer token. The problem was never that we lack a remote
 transport.
 
 ### Smithery — blocked on the auth scheme, not the transport
@@ -42,7 +42,7 @@ the live tool list over stdio regardless. Do not "fix" the manifest by adding th
 
 ### Glama — blocked on which repository holds the Dockerfile
 
-Different problem entirely. Glama indexes `ali8hsn/crews`, which is documentation only. The
+Different problem entirely. Glama indexes `ali8hsn/coordigent`, which is documentation only. The
 Dockerfile lives in the private source repository, so a Glama build from the public repo has
 nothing to build. Two ways out, both operator decisions:
 
@@ -63,11 +63,11 @@ advertises "Remote Streamable HTTP" explicitly.
 ## Docs discrepancy: Windows is neither claimed nor denied
 
 Every install guide is written in macOS/Linux terms — `curl … | sh`, `~/.tower/bin`,
-`/Users/you/.tower/bin/tower-mcp`. No guide states whether Windows is supported, and the
+`/Users/you/.tower/bin/coord-mcp`. No guide states whether Windows is supported, and the
 one-line installer as documented will not run on native Windows.
 
 **Resolved for now, pending a real check.** All seven install guides, the FAQ and the README
-now state plainly that macOS and Linux are what Tower is used on, that Windows is untested
+now state plainly that macOS and Linux are what Coordigent is used on, that Windows is untested
 rather than broken, and that the `curl … | sh` line will not run on native Windows as
 written. That matches the 🍎 🐧 markers already on the awesome-mcp-servers entry, so no
 change was needed there.
@@ -88,7 +88,7 @@ Keep the phrasing out of any copy that could end up there.
 
 ## Competitors worth watching, from our own listing
 
-mcpservers.org shows Related Servers on the Crews page. Two are direct:
+mcpservers.org shows Related Servers on the Coordigent page. Two are direct:
 
 - **[Befall](https://github.com/esenbora/befall-mcp)** — nearest competitor found. Same
   pitch, but claims are *refused at claim time* (first-writer-wins, TTL auto-release) rather
@@ -108,7 +108,7 @@ seeing Befall. Worth an answer that is better than "warnings are safer."
    Dockerfile to the public repo. Until one of those, Glama has nothing to build.
 3. **Whether to pursue OAuth on `/mcp`** or accept that Smithery is an MCPB-bundle listing
    only.
-4. **Merging or closing [PR #1](https://github.com/ali8hsn/crews/pull/1)**, which carries the
+4. **Merging or closing [PR #1](https://github.com/ali8hsn/coordigent/pull/1)**, which carries the
    Docker and MCPB documentation and is still open.
 5. **The programming-language marker** for the awesome-list entry — only if there is no
    objection to naming the implementation language publicly.
@@ -127,19 +127,19 @@ a merge conflict in this block is the correct outcome rather than a silent loss.
 
 ## Pull before each fire
 
-**The research session no longer writes to `~/crews-docs`. It works only in its own checkout at
-`~/crews-docs-research`, and commits there.** Before each fire, pull its work in:
+**The research session no longer writes to `~/coordigent-docs`. It works only in its own checkout at
+`~/coordigent-docs-research`, and commits there.** Before each fire, pull its work in:
 
 ```sh
-cd ~/crews-docs && git pull ~/crews-docs-research main
+cd ~/coordigent-docs && git pull ~/coordigent-docs-research main
 ```
 
-Nothing it produces reaches `~/crews-docs` any other way. Skip the pull and you are working
+Nothing it produces reaches `~/coordigent-docs` any other way. Skip the pull and you are working
 from a stale tree — which is exactly how the two collisions below happened.
 
 ## Why the split exists
 
-Two sessions wrote to `~/crews-docs` this morning and destroyed each other's work twice.
+Two sessions wrote to `~/coordigent-docs` this morning and destroyed each other's work twice.
 
 **First, a correct page.** The research session cloned at 04:55 CDT, two minutes before
 `d0696e5` added `docs/compare/befall.md`. Working from that stale snapshot it searched for
@@ -160,7 +160,7 @@ to it.
 
 **The lesson, for whichever session reads this next:** claiming a path is not the same as
 checking it. A claim staked at 10:20 says nothing about a file created at 10:18. Read the
-working tree immediately before writing, not only `.crews/claims/`, and prefer appending to
+working tree immediately before writing, not only `.coordigent/claims/`, and prefer appending to
 overwriting whenever another session is live.
 
 ## What the research session owns
@@ -169,7 +169,7 @@ It writes only these, and only in its own checkout:
 
 `docs/seo/submission-research.md`, `docs/seo/citations/`, `docs/seo/reply-queue.md`,
 `docs/seo/competitor-watch.md`, `docs/seo/name-collisions.md`, `docs/compare/crew-0xmmo.md`,
-and `.crews/claims/research-session.md`. It appends only to `docs/seo/inbox-drafts.md`,
+and `.coordigent/claims/research-session.md`. It appends only to `docs/seo/inbox-drafts.md`,
 `LOG.md`, this section of this file, and `docs/seo/submission-queue.md` (candidate entries in
 your template, never marked `ready`). It made one surgical edit each to
 `docs/seo/submission-results.md` and `docs/compare/README.md`.
@@ -190,7 +190,7 @@ depends on either checkout:
 Rebuilt as a single document on 7 September 2026 at 10:45 UTC; the two earlier partial
 documents are in Drive trash. The Drive connector cannot edit an existing document's content,
 so each refresh creates a new document with a new URL — if this link is stale, the current one
-is recorded in `.crews/claims/research-session.md`.
+is recorded in `.coordigent/claims/research-session.md`.
 
 ## Two things that changed today and affect your work
 

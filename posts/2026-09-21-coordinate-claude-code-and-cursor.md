@@ -12,7 +12,7 @@ One engineer uses Claude Code. Another uses Cursor. Both know the repository, an
 
 The team does not necessarily need one standard editor. It needs a shared way to coordinate the work crossing those editors. That means identifying the same repository, exposing editing intent, and sending messages that explain dependencies while changes are still in progress.
 
-I’m building Crews for this kind of situation. The example below is a proposed evaluation workflow, not a claim that every client configuration has been tested or that two agents will always produce compatible code. The distinction matters when deciding what to trust.
+I’m building Coordigent for this kind of situation. The example below is a proposed evaluation workflow, not a claim that every client configuration has been tested or that two agents will always produce compatible code. The distinction matters when deciding what to trust.
 
 ## Pick a dependency you can explain
 
@@ -22,13 +22,13 @@ Write that agreement before asking either agent to implement the full change. Na
 
 This planning step does not need to be elaborate. Its purpose is to make one dependency explicit enough that a coordination message can refer to it. “Update authentication” is too broad. “Keep the response fixture stable until the new error field is agreed” gives both agents something they can act on.
 
-## Understand what Crews adds
+## Understand what Coordigent adds
 
-Crews is an MCP server for coordination among participating coding agents. It exposes shared file state, file claims, conflict warnings, and agent messages. Tower is the installed binary. The repository remains in the team’s existing GitHub workflow; Crews is not a replacement Git host.
+Coordigent is an MCP server for coordination among participating coding agents. It exposes shared file state, file claims, conflict warnings, and agent messages. `coord` is the installed binary. The repository remains in the team’s existing GitHub workflow; Coordigent is not a replacement Git host.
 
 For this example, a claim tells Cursor that Claude Code intends to edit the shared type file. A conflict warning exposes a direct overlap if Cursor also needs that path. A message explains the decision that a file claim cannot fully express, such as the shape of the new response.
 
-The clients still perform the coding work. Crews does not make Cursor control Claude Code or merge their reasoning into a single conversation. It supplies coordination information that each participating session can use. That narrower boundary is easier to test than a promise that two agents somehow become one team automatically.
+The clients still perform the coding work. Coordigent does not make Cursor control Claude Code or merge their reasoning into a single conversation. It supplies coordination information that each participating session can use. That narrower boundary is easier to test than a promise that two agents somehow become one team automatically.
 
 ## Keep identities and repository context separate
 
@@ -40,11 +40,11 @@ Before any editing, ask each client to inspect the coordination state. If one po
 
 ## Install the same coordination server in both clients
 
-The [Crews install guide](https://trycrews.com/install) describes a personalized command containing the user’s token. The live gate currently reports self-serve signup disabled, so the published article must be checked against the access flow before readers are told they can complete onboarding. Do not fill that gap with a guessed token or a shared credential.
+The [Coordigent install guide](https://coordigent.com/install) describes a personalized command containing the user’s token. The live gate currently reports self-serve signup disabled, so the published article must be checked against the access flow before readers are told they can complete onboarding. Do not fill that gap with a guessed token or a shared credential.
 
-With working access, install Tower on each machine and run `tower connect` inside the registered checkout. The current registrar writes a `tower` MCP entry in `~/.claude.json` for Claude Code and `~/.cursor/mcp.json` for Cursor. Its command points to the installed `tower-mcp` executable on that machine.
+With working access, install Coordigent on each machine and run `coord connect` inside the registered checkout. The current registrar writes a `coord` MCP entry in `~/.claude.json` for Claude Code and `~/.cursor/mcp.json` for Cursor. Its command points to the installed `coord-mcp` executable on that machine.
 
-Run `tower doctor`, inspect the generated configuration, and restart both clients. Preserve other MCP entries. Configuration is not complete simply because a file exists: confirm that the clients can load the tools and that their sessions resolve the right repo.
+Run `coord doctor`, inspect the generated configuration, and restart both clients. Preserve other MCP entries. Configuration is not complete simply because a file exists: confirm that the clients can load the tools and that their sessions resolve the right repo.
 
 ## Make the first claim deliberately
 
@@ -82,6 +82,6 @@ If the task was too tightly coupled, sequencing more of it may be the correct re
 
 Standardizing on one coding client would not automatically create shared editing intent. Keeping different clients does not have to mean keeping every agent isolated. The practical middle ground is a small, explicit coordination workflow around the parts of the repository that multiple sessions touch.
 
-Start with one shared fixture and two active sessions. Once the behavior is clear, expand to a real dependency. The marketplace can help agents discover other capabilities later; it is not a substitute for establishing this basic handoff first.
+Start with one shared fixture and two active sessions. Once the behavior is clear, expand to a real dependency. The directory can help agents discover other capabilities later; it is not a substitute for establishing this basic handoff first.
 
-The [free solo entry point](https://trycrews.com/install#get-command) is available through the install guide when self-serve access is enabled. Team pricing remains a $20-per-seat monthly preview. Before recommending a team rollout, verify the full access flow and the actual client behavior with two participating sessions.
+The [free solo entry point](https://coordigent.com/install#get-command) is available through the install guide when self-serve access is enabled. Team pricing remains a $20-per-seat monthly preview. Before recommending a team rollout, verify the full access flow and the actual client behavior with two participating sessions.

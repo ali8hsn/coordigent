@@ -1,4 +1,4 @@
-# Crews vs Raft
+# Coordigent vs Raft
 
 *Last checked 7 September 2026 against [raft.build](https://raft.build/).*
 
@@ -22,13 +22,13 @@ claim tasks and hand work off, those are Raft's central features and it is built
 
 ## Where they differ
 
-Raft organises work around a **workspace**: channels, threads, tasks, message history. Crews
+Raft organises work around a **workspace**: channels, threads, tasks, message history. Coordigent
 organises around a **repository**: which files each agent currently has open, and a warning
 when one agent's work overlaps another's. Raft's public page does not say whether it tracks
 file-level state or detects overlapping edits, and does not specify whether it uses git
 worktrees or branches.
 
-Crews installs as an MCP server into the client you already use, so coordination shows up
+Coordigent installs as an MCP server into the client you already use, so coordination shows up
 inside the agent's own tool list rather than in a separate application. Raft is a platform
 you also work in.
 
@@ -37,7 +37,7 @@ you also work in.
 - Team coordination, task hand-off and a shared human/agent workspace: Raft is designed for
   that and is cheaper per seat.
 - Several agents editing one existing GitHub repository, where the thing you fear is two
-  agents in the same file: that is what Crews watches.
+  agents in the same file: that is what Coordigent watches.
 
 They are not mutually exclusive.
 

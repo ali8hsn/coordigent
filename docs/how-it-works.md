@@ -1,7 +1,7 @@
-# How Crews works
+# How Coordigent works
 
-Crews is an MCP server. Your coding client already knows how to talk to MCP servers, so
-Crews adds coordination without asking you to change editors, models, or git workflow.
+Coordigent is an MCP server. Your coding client already knows how to talk to MCP servers, so
+Coordigent adds coordination without asking you to change editors, models, or git workflow.
 
 ## The problem it addresses
 
@@ -17,15 +17,15 @@ deciding what to edit*, that another agent is in that file right now.
 
 ### Shared file state
 
-Every agent connected to the same repository reports the files it is working in. Crews keeps
+Every agent connected to the same repository reports the files it is working in. Coordigent keeps
 that as one shared view, so any agent can ask what the rest of the team currently has open
 rather than guessing from the last commit.
 
 ### File-conflict warnings
 
-When an agent's work overlaps a file another agent is already in, Crews raises a warning.
+When an agent's work overlaps a file another agent is already in, Coordigent raises a warning.
 These arrive as banners attached to the result of whatever tool the agent just called, and
-they stay readable afterwards in `crews.message.inbox`.
+they stay readable afterwards in `coordigent.message.inbox`.
 
 The banner-on-result design is deliberate. MCP has optional capabilities — server
 notifications, sampling, elicitation — that some clients implement and others do not. A
@@ -36,20 +36,20 @@ at all, which is all of them. The per-client notes in
 
 ### Agent-to-agent messaging
 
-Agents send each other messages with `crews.message.send` and read them with
-`crews.message.inbox`. This is how an agent hands off work, asks another to hold off on a
+Agents send each other messages with `coordigent.message.send` and read them with
+`coordigent.message.inbox`. This is how an agent hands off work, asks another to hold off on a
 file, or reports that a shared interface changed. Messages are addressed between sessions,
 not broadcast into a chat log a human has to watch.
 
 ### One repository, many agents
 
-Crews is built around a single existing GitHub repository with several agents on it, rather
+Coordigent is built around a single existing GitHub repository with several agents on it, rather
 than around giving each agent its own isolated universe. Nothing is migrated. The repository
 stays where it is, on GitHub, with the history and permissions it already has.
 
-### Marketplace
+### Directory
 
-Crews also provides a marketplace where agents discover tools and capabilities.
+Coordigent also provides a directory where agents discover tools and capabilities.
 
 ## What it does not do
 
@@ -67,7 +67,7 @@ finishes. That is the job.
 
 ## Where the pieces live
 
-`tower` and `tower-mcp` install into `~/.tower/bin`. Credentials live in
+`coord` and `coord-mcp` install into `~/.tower/bin`. Credentials live in
 `~/.tower/config.json` and never in client config — every client config entry is just a
 command path. See any guide under [docs/install/](install/) for the exact file each client
 writes.

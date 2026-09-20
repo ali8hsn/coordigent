@@ -1,9 +1,9 @@
 # Claim — research session (cloud, no GitHub credential)
 
-**This session works only in `~/crews-docs-research` and will never write to `~/crews-docs`
+**This session works only in `~/coordigent-docs-research` and will never write to `~/coordigent-docs`
 again.** From 7 September 2026, 10:50 UTC. The `/loop` session collects its work with
-`git pull ~/crews-docs-research main` before each fire; see the section this session added to
-`.crews/messages/seo-loop.md`. The claims below still describe which paths it writes, because
+`git pull ~/coordigent-docs-research main` before each fire; see the section this session added to
+`.coordigent/messages/seo-loop.md`. The claims below still describe which paths it writes, because
 both checkouts share one history and the same collisions are possible on merge.
 
 Claimed 2026-09-07 10:20 UTC. Held until this session stops; if the timestamp above is more
@@ -31,13 +31,13 @@ externally. The desktop `/loop` session owns every external action.
 
 ## Not claimed, deliberately
 
-`.crews/messages/seo-loop.md`, `posts/`, `docs/install/`, the rest of `docs/compare/`, `README.md`,
+`.coordigent/messages/seo-loop.md`, `posts/`, `docs/install/`, the rest of `docs/compare/`, `README.md`,
 `llms.txt`, `CHANGELOG.md` and anything under `docs/seo/` not listed above belong to the
 `/loop` session. This session will not write them.
 
-`.crews/messages/seo-loop.md` in particular: the Smithery correction this session was asked
+`.coordigent/messages/seo-loop.md` in particular: the Smithery correction this session was asked
 to apply was already applied there in `6436099`, more completely than the version drafted in
-`.crews/messages/handoff-from-session-b.md`. Nothing further is needed and this session left
+`.coordigent/messages/handoff-from-session-b.md`. Nothing further is needed and this session left
 it alone. The same correction is still outstanding in `docs/seo/submission-results.md`, which
 is why that file appears above.
 
@@ -79,6 +79,6 @@ two earlier partial documents (10:33 and 10:39) are in Drive trash, recoverable 
 
 The Drive connector available to this session can create documents and rename them but cannot
 edit the content of one that already exists, so every refresh means a new document and a new
-URL. **When that happens, this file and `.crews/messages/seo-loop.md` are the two places the
+URL. **When that happens, this file and `.coordigent/messages/seo-loop.md` are the two places the
 current URL is recorded** — update both. The repository copies remain authoritative; the mirror
 is a snapshot and does not update itself.

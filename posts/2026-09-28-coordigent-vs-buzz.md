@@ -1,27 +1,27 @@
 ---
-title: "Crews vs Buzz: Coordination or a New Workspace?"
-description: "Buzz gives agents identity and a shared room. Crews gives them shared file state on a repo you already have. The choice is about which workflow you are willing to change, not which feature list is longer."
-keywords: [Crews vs Buzz, Buzz by Block, multi-agent coordination, agent identity, MCP server for teams]
+title: "Coordigent vs Buzz: Coordination or a New Workspace?"
+description: "Buzz gives agents identity and a shared room. Coordigent gives them shared file state on a repo you already have. The choice is about which workflow you are willing to change, not which feature list is longer."
+keywords: [Coordigent vs Buzz, Buzz by Block, multi-agent coordination, agent identity, MCP server for teams]
 date: 2026-09-28
 author: Ali Hussain
 ---
 
-# Crews vs Buzz: Coordination or a New Workspace?
+# Coordigent vs Buzz: Coordination or a New Workspace?
 
-Disclosure before anything else: I am building Crews, so this is not an independent review.
+Disclosure before anything else: I am building Coordigent, so this is not an independent review.
 What I can do is be specific about what Buzz is, where it is genuinely stronger, and what
 question actually separates the two — and let you decide from that rather than from a
 feature table I control.
 
 ## The comparison that matters is not feature counts
 
-Buzz and Crews both exist because several AI agents working near each other produce a
+Buzz and Coordigent both exist because several AI agents working near each other produce a
 coordination problem that no single agent can see. Past that shared premise they take
 different shapes, and the useful question is not which has more capabilities. It is:
 
 **Are you willing to move where the work happens?**
 
-Buzz asks you to adopt a workspace. Crews asks you to install an MCP server into the clients
+Buzz asks you to adopt a workspace. Coordigent asks you to install an MCP server into the clients
 you already run. Everything else follows from that, including the parts where Buzz is the
 better answer.
 
@@ -41,7 +41,7 @@ inside it.
 
 That is a real answer to a real problem. If you are running agents with meaningful
 permissions and cannot say afterwards *which* agent did a thing and *whether it was allowed
-to*, Buzz addresses that directly and Crews does not address it at all.
+to*, Buzz addresses that directly and Coordigent does not address it at all.
 
 ## What Buzz does not claim to be
 
@@ -56,19 +56,19 @@ among Buzz's features. Read that as what it is: an absence in the write-up, not 
 absence in the product. Check it against Buzz's own documentation before you rely on it
 either way.
 
-## What Crews is
+## What Coordigent is
 
-Crews is an MCP server. Tower is the binary you install. It exposes shared file state across
+Coordigent is an MCP server. `coord` is the binary you install. It exposes shared file state across
 the agents connected to one repository, warnings when one agent's work overlaps a file
 another agent is already in, and direct messages between agent sessions.
 
-The scope is narrow on purpose. Crews does not host code, does not run CI, does not merge,
+The scope is narrow on purpose. Coordigent does not host code, does not run CI, does not merge,
 does not do identity or audit, and does not replace review. It answers one question — *is
 anyone else in this file right now* — early enough that the answer is still useful.
 
 The delivery detail matters more than it sounds. Conflict warnings never ride on an optional
 MCP capability. They arrive as banners on the result of whatever tool the agent just called,
-and stay readable in `crews.message.inbox`. A warning that depended on server notifications
+and stay readable in `coordigent.message.inbox`. A warning that depended on server notifications
 would silently disappear on the clients that do not implement them; riding on the tool result
 means it reaches anything that can call a tool.
 
@@ -83,18 +83,18 @@ adopting Buzz means either moving one of those or running a third place. That is
 criticism — a shared room is the entire point, and a shared room only works if everyone is
 in it. But it is a real cost and you should count it before the trial, not during.
 
-**Crews costs a config entry.** It registers with the client each engineer already uses, and
+**Coordigent costs a config entry.** It registers with the client each engineer already uses, and
 the repository stays on GitHub with the history and permissions it already has. The
-corresponding weakness is that Crews gives you nothing your existing tools do not already
+corresponding weakness is that Coordigent gives you nothing your existing tools do not already
 give you *except* the coordination layer. There is no room, no audit trail, no identity model.
 
 **Open source versus free tier is not the same thing, and the difference cuts against me.**
 Buzz is Apache 2.0. You can read it, fork it, run it yourself, and keep running it if Block
-loses interest. Crews has a free solo tier and $20 per seat per month for teams — currently
+loses interest. Coordigent has a free solo tier and $20 per seat per month for teams — currently
 a preview, with paid billing not yet enabled — but "free to use" is a pricing decision I can
 reverse, while "Apache 2.0" is a property of the software that I could not take away from you
 if I wanted to. If that distinction matters to your team, weight it accordingly. It is one of
-the strongest arguments for Buzz over Crews and it would be dishonest to bury it.
+the strongest arguments for Buzz over Coordigent and it would be dishonest to bury it.
 
 ## How to actually evaluate this
 
@@ -104,7 +104,7 @@ failure you would rather have.
 Pick a real dependency: one agent changes a shared type, another agent edits a caller. Give
 each session its task without telling either about the other. Then watch for two things.
 
-**First: does anything surface the coupling while the work is happening?** In Crews, the
+**First: does anything surface the coupling while the work is happening?** In Coordigent, the
 overlap check is the mechanism, and the honest limit is that it only sees agents that are
 participating — a manual edit or an unconnected tool is invisible to it, and you should test
 that case deliberately rather than assume coverage. In Buzz, the mechanism is that both
@@ -112,7 +112,7 @@ agents are posting into a room a human can read, which catches a different and b
 of problem, more slowly, and only if someone is reading.
 
 **Second: afterwards, can you reconstruct who did what and whether they were allowed to?**
-Buzz will answer that well. Crews will not answer it at all.
+Buzz will answer that well. Coordigent will not answer it at all.
 
 Those are different questions, and the one you care more about should decide this.
 
@@ -120,10 +120,10 @@ Those are different questions, and the one you care more about should decide thi
 
 Say so plainly: if you want agents and humans in one room with real identity, permissions and
 a signed audit trail — and especially if open source is a requirement rather than a
-preference — Buzz is built for that and Crews is not. It is also backed by Block, which is a
+preference — Buzz is built for that and Coordigent is not. It is also backed by Block, which is a
 different order of resourcing than a small hosted product.
 
-Crews is the right call in a narrower case: several people already working on one GitHub
+Coordigent is the right call in a narrower case: several people already working on one GitHub
 repository, using different clients, who do not want to move anywhere, and whose actual
 recurring pain is two agents editing the same file from different starting points.
 
@@ -133,4 +133,4 @@ If that is not your pain, the honest recommendation is the other tool.
 
 *Checked against Buzz's public materials in September 2026. Buzz is moving quickly; verify
 current capabilities against its own documentation before deciding. Corrections to this page
-are welcome as issues on the [Crews docs repository](https://github.com/ali8hsn/crews).*
+are welcome as issues on the [Coordigent docs repository](https://github.com/ali8hsn/coordigent).*

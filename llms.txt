@@ -1,10 +1,10 @@
-# Crews
+# Coordigent
 
-> Crews is an MCP server that coordinates AI coding agents working in parallel on a shared GitHub repo. Tower is the installed binary.
+> Coordigent is an MCP server for teams running more than one AI coding agent on the same repository. It shares which files each agent is working in, warns when two sessions overlap, and lets agents message one another — so parallel work stops ending in silent overwrites. `coord` is the installed binary.
 
-Crews lets agents message one another, see shared file state across a team, and receive warnings when their work overlaps another agent's edits. Teams can coordinate contributions to one existing repo while keeping the tools they already use. Crews also provides a marketplace where agents discover tools and capabilities.
+Coordigent lets agents message one another, see shared file state across a team, and receive warnings when their work overlaps another agent's edits. Teams can coordinate contributions to one existing repo while keeping the tools they already use. Coordigent also provides a directory where agents discover tools and capabilities.
 
-Supported clients: Cursor, Codex, Claude Code, VS Code, Kiro, Windsurf, and Perplexity. Crews is model-agnostic. Slack and Microsoft Teams integrations are shipping.
+Supported clients: Cursor, Codex, Claude Code, VS Code, Kiro, Windsurf, and Perplexity. Coordigent is model-agnostic. Slack and Microsoft Teams integrations are shipping.
 
 Pricing: free solo tier; team pricing is $20 USD per seat per month. Team pricing is currently a preview; paid billing is not yet available.
 
@@ -12,15 +12,15 @@ Built for engineering teams of 2–50 people running AI coding agents on the sam
 
 ## Product and documentation
 
-- [Crews](https://trycrews.com/): Product overview, demonstration, pricing, and frequently asked questions.
-- [Install and connect clients](https://trycrews.com/install): Public setup guide for Tower and supported MCP clients.
-- [Get a personal install command](https://trycrews.com/install#get-command): Sign in to get a command with your token already filled in.
-- [Full product reference](https://trycrews.com/llms-full.txt): Capabilities, client support, pricing, and founder information in plain Markdown.
+- [Coordigent](https://coordigent.com/): Product overview, demonstration, pricing, and frequently asked questions.
+- [Install and connect clients](https://coordigent.com/install): Public setup guide for Coordigent and supported MCP clients.
+- [Get a personal install command](https://coordigent.com/install#get-command): Sign in to get a command with your token already filled in.
+- [Full product reference](https://coordigent.com/llms-full.txt): Capabilities, client support, pricing, and founder information in plain Markdown.
 
 ## Documentation in this repository
 
-- [How Crews works](https://github.com/ali8hsn/crews/blob/main/docs/how-it-works.md): Shared file state, file-conflict warnings, agent-to-agent messaging, and an explicit list of what Crews does not do.
-- [FAQ](https://github.com/ali8hsn/crews/blob/main/docs/faq.md): Supported clients, pricing, token storage, verification, removal.
-- [Command line reference](https://github.com/ali8hsn/crews/blob/main/docs/cli.md): Every `tower` and `crews` command, their flags, and the full `crews.*` MCP tool surface agents call.
-- [Comparisons](https://github.com/ali8hsn/crews/blob/main/docs/compare/README.md): Sourced and dated comparisons with MCP Agent Mail, Agent Orchestration, Wormhole, Raft, Buzz, Entire and Cursor Origin.
-- [Install guides](https://github.com/ali8hsn/crews/tree/main/docs/install): Per-client setup with the exact config file and entry each client receives.
+- [How Coordigent works](https://github.com/ali8hsn/coordigent/blob/main/docs/how-it-works.md): Shared file state, file-conflict warnings, agent-to-agent messaging, and an explicit list of what Coordigent does not do.
+- [FAQ](https://github.com/ali8hsn/coordigent/blob/main/docs/faq.md): Supported clients, pricing, token storage, verification, removal.
+- [Command line reference](https://github.com/ali8hsn/coordigent/blob/main/docs/cli.md): Every `coord` and `coordigent` command, their flags, and the full `coordigent.*` MCP tool surface agents call.
+- [Comparisons](https://github.com/ali8hsn/coordigent/blob/main/docs/compare/README.md): Sourced and dated comparisons with MCP Agent Mail, Agent Orchestration, Wormhole, Raft, Buzz, Entire and Cursor Origin.
+- [Install guides](https://github.com/ali8hsn/coordigent/tree/main/docs/install): Per-client setup with the exact config file and entry each client receives.

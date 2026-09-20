@@ -6,8 +6,8 @@
 
 ## What prompted it
 
-The Google Doc *"Crews SEO loop state"* was created at 10:33 UTC and recorded only in
-`.crews/claims/research-session.md`. `LOG.md` is the audit surface, and it was not there.
+The Google Doc *"Coordigent SEO loop state"* was created at 10:33 UTC and recorded only in
+`.coordigent/claims/research-session.md`. `LOG.md` is the audit surface, and it was not there.
 Commit `61ff1a2`, three minutes earlier, states "No writes outside this repo."
 
 **The exposure is nil** — the repository's own research notes, in the owner's own Drive. Ali

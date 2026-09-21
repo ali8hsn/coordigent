@@ -3,9 +3,10 @@ Scope of this license
 
 This license covers the documentation in this repository only: the Markdown
 files, llms.txt, and any images or text under docs/. It does not cover the
-Tower binaries, the tower-mcp server, the Crews hosted service at trycrews.com,
-or any source code of those products, none of which is distributed here. Those
-remain the property of Crews and are provided under their own terms.
+coord binaries, the coord-mcp server, the Coordigent hosted service at
+coordigent.com, or any source code of those products, none of which is
+distributed here. Those remain the property of Coordigent and are provided
+under their own terms.
 
 The documentation is licensed under the Creative Commons Attribution 4.0
 International License (CC BY 4.0). The full legal code follows.
